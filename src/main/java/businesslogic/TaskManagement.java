@@ -4,12 +4,15 @@ package businesslogic;
 import datamodel.Employee;
 import datamodel.Task;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class TaskManagement {
+public class TaskManagement implements Serializable {
+
+    private static final long serialVersionUID = 1L;
     private Map<Employee, List<Task>> map = new HashMap<Employee, List<Task>>();
 
     public void assignTaskToEmployee(int idEmployee, Task task) {
@@ -25,6 +28,7 @@ public class TaskManagement {
 
         for (Map.Entry<Employee, List<Task>> entry : map.entrySet()) {
             Employee employee = entry.getKey();
+            //key employee id, value employee task
 
             if(employee.getIdEmployee()==idEmployee){
                 List<Task> tasks = entry.getValue();

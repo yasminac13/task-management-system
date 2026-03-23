@@ -1,6 +1,10 @@
 package datamodel;
 
-public sealed abstract class Task permits SimpleTask, ComplexTask {
+import java.io.Serializable;
+
+public sealed abstract class Task implements Serializable permits SimpleTask, ComplexTask {
+
+    private static final long serialVersionUID = 1L;
     private int idTask;
     private String statusTask = "Uncompleted";
 
@@ -23,4 +27,5 @@ public sealed abstract class Task permits SimpleTask, ComplexTask {
 
     public abstract int estimateDuration();
 }
+
 

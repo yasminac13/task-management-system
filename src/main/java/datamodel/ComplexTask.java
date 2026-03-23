@@ -1,9 +1,10 @@
 package datamodel;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class ComplexTask extends Task {
+public final class ComplexTask extends Task implements Serializable {
     private List<Task> tasks = new ArrayList<Task>();
 
     public ComplexTask(int idEmployee, String name) {
@@ -12,6 +13,10 @@ public final class ComplexTask extends Task {
 
     public void addTask(Task task) {
         if(tasks!=null) tasks.add(task);
+    }
+
+    public boolean removeTask(int taskId) {
+        return tasks.removeIf(task -> task.getIdTask() == taskId);
     }
 
     @Override

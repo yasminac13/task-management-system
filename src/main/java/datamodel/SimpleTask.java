@@ -1,6 +1,8 @@
 package datamodel;
 
-public final class SimpleTask extends Task {
+import java.io.Serializable;
+
+public final    class SimpleTask extends Task implements Serializable {
     private int startHour;
     private int endHour;
 

@@ -28,6 +28,7 @@ public class Utility {
 
     public static Map<String, Map<String, Integer>> getTasksStatistics(Map<Employee, List<Task>> projectData){
         Map<String, Map<String, Integer>> result = new HashMap<>();
+        //employee name , task status, how many tasks have that status
 
         for(Map.Entry<Employee, List<Task>> entry : projectData.entrySet()){
             String name = entry.getKey().getName();
@@ -51,8 +52,8 @@ public class Utility {
     }
 
     private static class EmployeeDuration {
-        int duration;
-        String name;
+        private int duration;
+        private String name;
 
         public EmployeeDuration(int duration, String name) {
             this.duration = duration;
